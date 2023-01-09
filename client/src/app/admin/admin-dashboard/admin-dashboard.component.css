@@ -1,0 +1,31 @@
+main {
+  padding-left: 250px;
+  margin-right: 20px;
+}
+.top-nav-bar {
+  text-align: right;
+}
+i {
+  padding-top: 15px;
+  font-weight: bold;
+}
+.user-name {
+  padding-right: 10px;
+  font-size: 20px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}

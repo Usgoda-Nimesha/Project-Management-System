@@ -1,10 +1,14 @@
 {
   "development": {
     "PORT": 3000,
-    "MONGODB_URI": "mongodb://localhost:27017/ProjectManagementDB"
+    "MONGODB_URI": "mongodb://localhost:27017/ProjectManagementDB",
+    "JWT_SECRET": "SECRET#1999",
+    "JWT_EXP": "20m"
   },
   "production": {
     "PORT": 3000,
-    "MONGODB_URI": "mongodb://localhost:27017/ProjectManagementDB"
+    "MONGODB_URI": "mongodb://localhost:27017/ProjectManagementDB",
+    "JWT_SECRET": "SECRET#1999",
+    "JWT_EXP": "20m"
   }
 }

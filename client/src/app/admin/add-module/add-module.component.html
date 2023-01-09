@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Add New Degree</h1>
+<div mat-dialog-content>
+  <form [formGroup]="addModuleForm">
+    <mat-form-field appearance="outline">
+      <mat-label> Module Name</mat-label>
+      <input formControlName="moduleName" matInput />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label> Module ID</mat-label>
+      <input
+        type="number"
+        formControlName="moduleId"
+        matInput
+        placeholder="Degree Id"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label> Duration</mat-label>
+      <mat-select formControlName="duration">
+        <mat-option value="1">1 Semester</mat-option>
+        <mat-option value="2">2 Semester</mat-option>
+        <mat-option value="3">3 Semester</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div mat-dialog-action [align]="'end'">
+      <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+      <button style="margin-left: 8px" mat-raised-button color="primary">
+        {{ actionType }}
+      </button>
+    </div>
+  </form>
+</div>

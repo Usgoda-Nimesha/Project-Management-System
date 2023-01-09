@@ -1,0 +1,74 @@
+<section class="loc">
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div
+        class="card text-black align-items-center"
+        style="border-radius: 17px; width: 400px; margin-top: 50px"
+      >
+        <div class="row">
+          <h1>Login</h1>
+        </div>
+
+        <form #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)">
+          <div class="row">
+            <div class="form-outline">
+              <label>Email</label>
+              <input
+                type="text"
+                name="email"
+                #email="ngModel"
+                [(ngModel)]="model.email"
+                class="form-control"
+                placeholder="Ex: ugvnimesha@students.nsbm.ac.lk"
+              />
+              <div class="invalid-feedback">Please choose a username.</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-outline">
+              <label>Password</label>
+              <input
+                type="text"
+                name="password"
+                #password="ngModel"
+                [(ngModel)]="model.password"
+                class="form-control"
+                placeholder="Password"
+              />
+              <div class="invalid-feedback">Please choose a username.</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm">
+              <button type="submit" class="btn btn-primary submit-btn">
+                SIGN IN
+              </button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-6">
+              <label style="font-size: 17px">Not a member?</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <button
+                type="submit"
+                (click)="openRegisterPage()"
+                style="margin-top: -125px; margin-left: 140px"
+                class="btn btn-link"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="row"></div>
+      </div>
+    </div>
+  </div>
+</section>

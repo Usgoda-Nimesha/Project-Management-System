@@ -1,0 +1,101 @@
+<section class="loc" style="background-color: white">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div
+        class="card text-black w-50 align-items-center"
+        style="border-radius: 25px"
+      >
+        <div class="row">
+          <h1>Sign Up</h1>
+        </div>
+        <form
+          #registerForm="ngForm"
+          (ngSubmit)="registerForm.valid && onSubmit(registerForm)"
+          class="needs-validation"
+          novalidate
+        >
+          <div class="row">
+            <div class="col-sm">
+              <div class="form-outline">
+                <label for="validationCustom01" class="form-label"
+                  >First Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  #firstName="ngModel"
+                  [(ngModel)]="userService.selectedUser.firstName"
+                  name="firstName"
+                  placeholder="Ex: Usgoda Gamage Vihanga Nimesha"
+                />
+                <div class="invalid-feedback">Please choose a username.</div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <label class="col">Last Name</label>
+              <input
+                type="text"
+                #lastName="ngModel"
+                [(ngModel)]="userService.selectedUser.lastName"
+                name="lastName"
+                class="form-control form-control-lg"
+                placeholder="Ex: 106778"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <label class="col">Email</label>
+              <input
+                type="text"
+                #email="ngModel"
+                [(ngModel)]="userService.selectedUser.email"
+                name="email"
+                class="form-control form-control-lg"
+                placeholder="Ex: 20.3"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm">
+              <label class="col">Password</label>
+              <input
+                type="password"
+                #password="ngModel"
+                [(ngModel)]="userService.selectedUser.password"
+                name="password"
+                class="form-control form-control-lg"
+                placeholder="Password"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm">
+              <label class="col">Confirm Password</label>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Confirm Password"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm"></div>
+
+            <div class="col-sm">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="col-sm"></div>
+          </div>
+
+          <div class="row"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row"></div>
+</section>

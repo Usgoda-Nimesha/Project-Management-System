@@ -1,12 +1,15 @@
-// configuration file
+// configuration files
 require("./config/config");
 require("./models/db-con");
+require("./config/passportConfig");
 
 // required packages
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const passport = require("passport");
 
+// routers file
 const idxRouter = require("./routes/index.router");
 
 var app = express();
@@ -18,6 +21,7 @@ app.use(bodyParser.json());
 // in 2 different port numbers, therefore to communicate between these
 // 2 applications cors must be enabled
 app.use(cors());
+app.use(passport.initialize());
 app.use("/api", idxRouter);
 
 // start the express server

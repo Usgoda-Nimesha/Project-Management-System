@@ -16,4 +16,5 @@ mongoose.connect(process.env.MONGODB_URI, (err) => {
   }
 });
 
-require("./student-register.model");
+require("./user-model");
+require("./degree-model");
