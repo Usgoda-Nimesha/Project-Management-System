@@ -4,10 +4,13 @@ const moduleSchema = mongoose.Schema({
   degreeId: {
     type: String,
   },
+  moduleName: {
+    type: String,
+  },
   moduleId: {
     type: String,
   },
-  moduleName: {
+  duration: {
     type: String,
   },
 });
@@ -31,3 +34,4 @@ const degreeSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model("Degree", degreeSchema);
+module.exports = mongoose.model("Module", moduleSchema);

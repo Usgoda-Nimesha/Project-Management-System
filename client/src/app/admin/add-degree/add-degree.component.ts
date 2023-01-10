@@ -54,7 +54,7 @@ export class AddDegreeComponent implements OnInit {
             alert('Degree Added');
             // reset
             this.addDegreeForm.reset();
-            this.dialogRef.close('update');
+            this.dialogRef.close('save');
           },
           error: () => {
             alert('Error adding degree');

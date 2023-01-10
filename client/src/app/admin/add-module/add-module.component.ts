@@ -28,4 +28,22 @@ export class AddModuleComponent implements OnInit {
       duration: ['', Validators.required],
     });
   }
+
+  addModule() {
+    if (!this.editData.moduleId) {
+      if (this.addModuleForm.valid) {
+        const data = this.addModuleForm.value;
+        data['degreeId'] = this.editData.degreeId;
+        this.adminService.postModule(data).subscribe({
+          next: (res) => {
+            alert('Module Added');
+            this.addModuleForm.reset();
+          },
+          error: () => {
+            alert('Error adding module');
+          },
+        });
+      }
+    }
+  }
 }

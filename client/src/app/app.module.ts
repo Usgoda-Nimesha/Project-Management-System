@@ -39,6 +39,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AddModuleComponent } from './admin/add-module/add-module.component';
+import { ModulesComponent } from './admin/modules/modules.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { AddModuleComponent } from './admin/add-module/add-module.component';
     LecturerDashboardComponent,
     AdminNavbarComponent,
     AddModuleComponent,
+    ModulesComponent,
   ],
   imports: [
     BrowserModule,

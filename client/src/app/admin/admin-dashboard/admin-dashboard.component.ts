@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/shared/user.service';
 
-import { AfterViewInit, ViewChild } from '@angular/core';
+import { ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -10,6 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 // components
 import { AddDegreeComponent } from '../add-degree/add-degree.component';
 import { AdminService } from 'src/app/shared/admin-service/admin.service';
+import { ModulesComponent } from '../modules/modules.component';
 // angular material
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddModuleComponent } from '../add-module/add-module.component';
@@ -88,6 +89,14 @@ export class AdminDashboardComponent implements OnInit {
       },
     });
   }
+  // display modules
+  openModules(row: any) {
+    this.dialog.open(ModulesComponent, {
+      width: '50%',
+      height: '80%',
+      data: row,
+    });
+  }
 
   // search bar to find specific rows easily
   applyFilter(event: Event) {
@@ -102,7 +111,7 @@ export class AdminDashboardComponent implements OnInit {
   // send information to edit degree component
   editDegree(row: any) {
     this.dialog
-      .open(AddDegreeComponent, { width: '30%', data: row })
+      .open(AddDegreeComponent, { width: '40%', data: row })
       .afterClosed()
       .subscribe((value) => {
         if (value == 'update') {

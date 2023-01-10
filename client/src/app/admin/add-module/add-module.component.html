@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Add New Degree</h1>
+<h1 mat-dialog-title>Add New Module</h1>
 <div mat-dialog-content>
   <form [formGroup]="addModuleForm">
     <mat-form-field appearance="outline">
@@ -27,7 +27,12 @@
 
     <div mat-dialog-action [align]="'end'">
       <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-      <button style="margin-left: 8px" mat-raised-button color="primary">
+      <button
+        style="margin-left: 8px"
+        mat-raised-button
+        color="primary"
+        (click)="addModule()"
+      >
         {{ actionType }}
       </button>
     </div>

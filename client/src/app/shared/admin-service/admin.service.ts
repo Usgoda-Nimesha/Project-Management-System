@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 export class AdminService {
   constructor(private http: HttpClient) {}
 
+  ////////////////////////////// DEGREE ////////////////////////////////////
   postDegree(data: any) {
     return this.http.post(environment.apiBaseUrl + '/degree', data);
   }
@@ -22,5 +23,14 @@ export class AdminService {
 
   deleteDegree(_id: string) {
     return this.http.delete(environment.apiBaseUrl + `/degree/${_id}`);
+  }
+
+  ////////////////////////////////// MODULE //////////////////////////////////
+  postModule(data: any) {
+    return this.http.post(environment.apiBaseUrl + '/saveModule', data);
+  }
+
+  getModules(degreeId: string) {
+    return this.http.get<any>(environment.apiBaseUrl + `/module/${degreeId}`);
   }
 }
