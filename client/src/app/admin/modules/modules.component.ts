@@ -1,4 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AfterViewInit, ViewChild } from '@angular/core';
@@ -23,6 +24,19 @@ import {
   styleUrls: ['./modules.component.css'],
 })
 export class ModulesComponent implements OnInit {
+  actionType = 'Save';
+  addModuleForm!: FormGroup;
+  editValues = false;
+
+  addStatus = false;
+  columnNum = 3;
+  tableWidth = '900px';
+
+  module: any = {
+    moduleId: '',
+    moduleName: '',
+    duration: '',
+  };
   displayedColumns: String[] = [
     'moduleName',
     'moduleId',
@@ -36,6 +50,7 @@ export class ModulesComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
+    private formBuilder: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private dialogRef: MatDialogRef<ModulesComponent>,
     private adminService: AdminService
@@ -43,6 +58,11 @@ export class ModulesComponent implements OnInit {
   degreeName = this.data.degreeName;
   ngOnInit(): void {
     this.getAllModules();
+    this.addModuleForm = this.formBuilder.group({
+      moduleName: ['', Validators.required],
+      moduleId: ['', Validators.required],
+      duration: ['', Validators.required],
+    });
   }
   // search bar to find specific rows easily
   applyFilter(event: Event) {
@@ -66,5 +86,55 @@ export class ModulesComponent implements OnInit {
         alert('Error getting module data');
       },
     });
+  }
+
+  addModuleStatus() {
+    this.setCssProperties();
+  }
+  setCssProperties() {
+    this.addStatus = true;
+    this.columnNum = 2;
+    this.tableWidth = '600px';
+  }
+  closeAddModules() {
+    this.addStatus = false;
+    this.columnNum = 3;
+    this.tableWidth = '900px';
+    this.getAllModules();
+  }
+
+  // populate editable data in the input fields
+  editModule(row: any) {
+    this.editValues = true;
+    this.setCssProperties();
+    this.actionType = 'Update';
+    this.addModuleForm.controls['moduleId'].setValue(row.moduleId);
+    this.addModuleForm.controls['moduleName'].setValue(row.moduleName);
+    this.addModuleForm.controls['duration'].setValue(row.duration);
+  }
+
+  // update values in database
+  updateModule() {
+    alert(this.addModuleForm.get('moduleName')?.value);
+  }
+
+  // add new module
+  addModule() {
+    this.addModuleForm.reset();
+    if (!this.editValues) {
+      const data = this.addModuleForm.value;
+      data['degreeId'] = this.data.degreeId;
+      this.adminService.postModule(data).subscribe({
+        next: (res) => {
+          alert('Module added');
+          this.addModuleForm.reset();
+        },
+        error: () => {
+          alert('Error adding module');
+        },
+      });
+    } else {
+      this.updateModule();
+    }
   }
 }

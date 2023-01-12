@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -11,6 +11,9 @@ import { AdminService } from 'src/app/shared/admin-service/admin.service';
   styleUrls: ['./add-module.component.css'],
 })
 export class AddModuleComponent implements OnInit {
+  // module variable to be recieved from modules-component
+  @Input() module!: any;
+
   actionType = 'Save';
   addModuleForm!: FormGroup;
 
@@ -30,7 +33,7 @@ export class AddModuleComponent implements OnInit {
   }
 
   addModule() {
-    if (!this.editData.moduleId) {
+    if (!this.module.moduleName) {
       if (this.addModuleForm.valid) {
         const data = this.addModuleForm.value;
         data['degreeId'] = this.editData.degreeId;

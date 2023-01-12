@@ -1,0 +1,24 @@
+npm init
+
+npm i --save express mongoose body-parser bcryptjs cors
+
+# new angular app
+ng new
+
+# create new angular component called user
+# g - generate, c - component
+ng g c user
+
+# angular material component
+ng g m material
+
+# create service class called user in shared folder
+ng g s user
+
+# create model class in shared folder
+ng g class user --type=model
+
+npm i --save jsonwebtoken passport passport-local lodash
+
+# Auth guard
+ng g g auth

@@ -92,7 +92,7 @@ export class AdminDashboardComponent implements OnInit {
   // display modules
   openModules(row: any) {
     this.dialog.open(ModulesComponent, {
-      width: '50%',
+      width: '70%',
       height: '80%',
       data: row,
     });

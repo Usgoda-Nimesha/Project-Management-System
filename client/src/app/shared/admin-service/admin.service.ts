@@ -33,4 +33,8 @@ export class AdminService {
   getModules(degreeId: string) {
     return this.http.get<any>(environment.apiBaseUrl + `/module/${degreeId}`);
   }
+
+  editModules(data: any, _id: string) {
+    return this.http.put(environment.apiBaseUrl + `/module/${_id}`, data);
+  }
 }
