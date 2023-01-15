@@ -25,3 +25,10 @@ module.exports.getModules = (req, res, next) => {
     }
   });
 };
+
+module.exports.updateModule = (req, res) => {
+  var module = {
+    moduleName: req.body.moduleName,
+    moduleId: req.body.moduleId,
+  };
+};

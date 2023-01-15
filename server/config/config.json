@@ -1,7 +1,7 @@
 {
   "development": {
     "PORT": 3000,
-    "MONGODB_URI": "mongodb://localhost:27017/ProjectManagementDB",
+    "MONGODB_URI": "mongodb+srv://viha990803:nime123@cluster0.chqv3ce.mongodb.net/ProjectManagementDB?retryWrites=true&w=majority",
     "JWT_SECRET": "SECRET#1999",
     "JWT_EXP": "20m"
   },

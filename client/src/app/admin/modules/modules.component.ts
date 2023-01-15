@@ -27,6 +27,7 @@ export class ModulesComponent implements OnInit {
   actionType = 'Save';
   addModuleForm!: FormGroup;
   editValues = false;
+  module_id = '';
 
   addStatus = false;
   columnNum = 3;
@@ -79,6 +80,7 @@ export class ModulesComponent implements OnInit {
       next: (res) => {
         // bind data
         this.dataSource = new MatTableDataSource(res);
+        console.log(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       },
@@ -105,6 +107,8 @@ export class ModulesComponent implements OnInit {
 
   // populate editable data in the input fields
   editModule(row: any) {
+    this.module_id = row._id;
+
     this.editValues = true;
     this.setCssProperties();
     this.actionType = 'Update';
@@ -115,12 +119,11 @@ export class ModulesComponent implements OnInit {
 
   // update values in database
   updateModule() {
-    alert(this.addModuleForm.get('moduleName')?.value);
+    this.adminService.editModules(this.addModuleForm.value, this.module_id);
   }
 
   // add new module
   addModule() {
-    this.addModuleForm.reset();
     if (!this.editValues) {
       const data = this.addModuleForm.value;
       data['degreeId'] = this.data.degreeId;

@@ -45,4 +45,5 @@ router.delete("/degree/:id", degreeCtrl.deleteDegree);
 // Module
 router.post("/saveModule", moduleCtrl.saveModule);
 router.get("/module/:id", moduleCtrl.getModules);
+//router.put("/module/:m_id", moduleCtrl.updateModule);
 module.exports = router;
