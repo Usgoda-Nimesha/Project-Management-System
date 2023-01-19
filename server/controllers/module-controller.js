@@ -26,9 +26,27 @@ module.exports.getModules = (req, res, next) => {
   });
 };
 
+
+
 module.exports.updateModule = (req, res) => {
+  console.log("hello")
+  console.log(req.params.m_id)
   var module = {
+    degreeId:req.body.degreeId,
     moduleName: req.body.moduleName,
     moduleId: req.body.moduleId,
+    duration:req.body.duration
   };
+  Module.findByIdAndUpdate(
+    req.params.m_id,
+    {$set:module},
+    {new:true},
+    (err,doc)=>{
+      if(!err){
+        res.send(doc)
+      }else{
+        console.log("Error updating module")
+      }
+    }
+  )
 };

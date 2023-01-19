@@ -40,6 +40,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AddModuleComponent } from './admin/add-module/add-module.component';
 import { ModulesComponent } from './admin/modules/modules.component';
+import {MatCardModule} from '@angular/material/card';
+import { AddSectionComponent } from './lecturer/add-section/add-section.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { ModulesComponent } from './admin/modules/modules.component';
     AdminNavbarComponent,
     AddModuleComponent,
     ModulesComponent,
+    AddSectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +83,7 @@ import { ModulesComponent } from './admin/modules/modules.component';
     MatSortModule,
     MatSidenavModule,
     MatGridListModule,
+    MatCardModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

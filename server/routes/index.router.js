@@ -11,11 +11,13 @@ const jwtVerify = require("../config/jwtVerify");
 const adminDashboard = require("../controllers/admin-dashboard-controller");
 const degreeCtrl = require("../controllers/degree-controller");
 const moduleCtrl = require("../controllers/module-controller");
+const studentDegree = require("../controllers/student-degree-controller")
 // Lecturer related
 const lecturerDashboard = require("../controllers/lecturer-dashboard-controller");
 
 // Student related
 const studentDashboard = require("../controllers/student-dashboard-controller");
+const lecturerSection = require("../controllers/lecturer-section");
 
 // login routing
 router.post("/register", registerCtrl.userRegister);
@@ -32,8 +34,10 @@ router.get(
 router.get(
   "/lecturerDashboard",
   jwtVerify.verifyToken,
-  lecturerDashboard.dashboard
+  lecturerDashboard.getAllModules
 );
+
+router.post("/addSection",lecturerSection.addSection)
 
 // admin routing
 router.get("/adminDashboard", jwtVerify.verifyToken, adminDashboard.dashboard);
@@ -42,8 +46,11 @@ router.post("/degree", degreeCtrl.saveDegree);
 router.get("/degree", degreeCtrl.getDegree);
 router.put("/degree/:id", degreeCtrl.updateDegree);
 router.delete("/degree/:id", degreeCtrl.deleteDegree);
+router.post("/studentDegree",studentDegree.assignDegree)
 // Module
 router.post("/saveModule", moduleCtrl.saveModule);
 router.get("/module/:id", moduleCtrl.getModules);
-//router.put("/module/:m_id", moduleCtrl.updateModule);
+router.put("/module/:m_id", moduleCtrl.updateModule);
+
+
 module.exports = router;

@@ -37,7 +37,7 @@ export class UserService {
   }
 
   getUser(path) {
-    return this.http.get(environment.apiBaseUrl + path);
+    return this.http.get<any>(environment.apiBaseUrl + path);
   }
 
   // functions
@@ -56,6 +56,7 @@ export class UserService {
     if (token) {
       // decode encoded data
       var userPayload = atob(token.split('.')[1]);
+      //console.log(JSON.parse(userPayload)['_id'])
       return JSON.parse(userPayload);
     } else {
       return null;

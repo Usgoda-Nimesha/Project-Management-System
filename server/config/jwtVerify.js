@@ -10,7 +10,7 @@ module.exports.verifyToken = (req, res, next) => {
   } else {
     jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
       // check for errors
-      console.log(decoded._id);
+      
       if (err) {
         return res
           .status(500)

@@ -1,1 +1,15 @@
-<h1>{{ userDetails.role }}</h1>
+
+<mat-card  *ngFor="let module of modules" class="spacing">
+  <mat-card-header>
+    <mat-card-title>{{module.moduleName}}</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>This card indeterminates progress bar.</p>
+    <p></p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">View Submissions</button>
+
+  </mat-card-actions>
+</mat-card>

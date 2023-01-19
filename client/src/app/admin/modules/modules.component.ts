@@ -80,7 +80,7 @@ export class ModulesComponent implements OnInit {
       next: (res) => {
         // bind data
         this.dataSource = new MatTableDataSource(res);
-        console.log(res);
+
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       },
@@ -119,18 +119,30 @@ export class ModulesComponent implements OnInit {
 
   // update values in database
   updateModule() {
-    this.adminService.editModules(this.addModuleForm.value, this.module_id);
+    const data = this.addModuleForm.value;
+    data["degreeId"] = this.data.degreeId
+    console.log(data)
+    this.adminService.editModules(this.addModuleForm.value, this.module_id).subscribe({
+      next:(res)=>{
+        alert("Module Updated")
+        // reset
+        this.addModuleForm.reset()
+        this.getAllModules()
+      }
+    });
   }
 
   // add new module
   addModule() {
     if (!this.editValues) {
+      this.addModuleForm.reset()
       const data = this.addModuleForm.value;
       data['degreeId'] = this.data.degreeId;
       this.adminService.postModule(data).subscribe({
         next: (res) => {
           alert('Module added');
           this.addModuleForm.reset();
+          this.getAllModules()
         },
         error: () => {
           alert('Error adding module');
