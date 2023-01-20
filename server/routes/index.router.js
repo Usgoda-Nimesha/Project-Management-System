@@ -18,6 +18,8 @@ const lecturerDashboard = require("../controllers/lecturer-dashboard-controller"
 // Student related
 const studentDashboard = require("../controllers/student-dashboard-controller");
 const lecturerSection = require("../controllers/lecturer-section");
+const studentProjects = require("../controllers/student-projects")
+
 
 // login routing
 router.post("/register", registerCtrl.userRegister);
@@ -29,6 +31,7 @@ router.get(
   jwtVerify.verifyToken,
   studentDashboard.dashboard
 );
+router.get("/getProject/:id",studentProjects.getProjects)
 
 // lecturer routing
 router.get(

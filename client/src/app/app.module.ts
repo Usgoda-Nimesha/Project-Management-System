@@ -42,6 +42,9 @@ import { AddModuleComponent } from './admin/add-module/add-module.component';
 import { ModulesComponent } from './admin/modules/modules.component';
 import {MatCardModule} from '@angular/material/card';
 import { AddSectionComponent } from './lecturer/add-section/add-section.component';
+import { StudentProjectComponent } from './student/student-project/student-project.component';
+import { StudentNavbarComponent } from './student/student-navbar/student-navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +59,9 @@ import { AddSectionComponent } from './lecturer/add-section/add-section.componen
     AddModuleComponent,
     ModulesComponent,
     AddSectionComponent,
+    StudentProjectComponent,
+    StudentNavbarComponent,
+
   ],
   imports: [
     BrowserModule,

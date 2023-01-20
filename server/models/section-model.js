@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 
   const moduleSectionModel = mongoose.Schema({
-    _id:{
+    id:{
         type:String
     },
     sectionName:{
