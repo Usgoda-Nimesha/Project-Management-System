@@ -21,3 +21,4 @@ require("./user-model");
 require("./degree-model");
 require("./student-degree-model");
 require("./section-model")
+require("./student-projects")

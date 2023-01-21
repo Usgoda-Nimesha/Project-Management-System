@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
-  const studentDegreeModel = mongoose.Schema({
+const studentDegreeModel = mongoose.Schema({
     _id:{
         type:String,
     },

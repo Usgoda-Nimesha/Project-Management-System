@@ -1,14 +1,13 @@
 <app-student-navbar></app-student-navbar>
-<mat-card  *ngFor="let module of modules" class="spacing">
+<mat-card  *ngFor="let module of modules" class="spacing" style="width: 400px;height:140px">
   <mat-card-header>
     <mat-card-title>{{module.moduleName}}</mat-card-title>
-    <mat-card-subtitle></mat-card-subtitle>
+
   </mat-card-header>
   <mat-card-content>
-    <p>This card indeterminates progress bar.</p>
-    <p></p>
+
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions style="text-align: center;">
     <button mat-raised-button color="primary" (click)="openProjects(module)">View Submissions</button>
 
   </mat-card-actions>

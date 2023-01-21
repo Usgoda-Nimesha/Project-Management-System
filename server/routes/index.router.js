@@ -19,7 +19,7 @@ const lecturerDashboard = require("../controllers/lecturer-dashboard-controller"
 const studentDashboard = require("../controllers/student-dashboard-controller");
 const lecturerSection = require("../controllers/lecturer-section");
 const studentProjects = require("../controllers/student-projects")
-
+const submitProject = require("../controllers/submit-project")
 
 // login routing
 router.post("/register", registerCtrl.userRegister);
@@ -32,6 +32,7 @@ router.get(
   studentDashboard.dashboard
 );
 router.get("/getProject/:id",studentProjects.getProjects)
+router.post("/saveProject",submitProject.saveProject)
 
 // lecturer routing
 router.get(

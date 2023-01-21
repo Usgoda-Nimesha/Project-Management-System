@@ -15,6 +15,7 @@ import {
   MatDialog,
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
+import { SubmitComponent } from '../submit/submit.component';
 
 
 @Component({
@@ -42,7 +43,8 @@ export class StudentProjectComponent implements OnInit {
     private router: Router,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private dialogRef: MatDialogRef<StudentProjectComponent>,
-    private studentService:StudentService
+    private studentService:StudentService,
+    private dialog:MatDialog
    ) { }
 
   ngOnInit(): void {
@@ -58,6 +60,15 @@ export class StudentProjectComponent implements OnInit {
         alert(err);
       }
     );
+  }
+
+  submitProjects(project:any){
+    this.dialog.open(SubmitComponent,{
+      width:"50%",
+      data:project
+    }).afterClosed().subscribe((value)=>{
+
+    })
   }
     // search bar to find specific rows easily
     applyFilter(event: Event) {

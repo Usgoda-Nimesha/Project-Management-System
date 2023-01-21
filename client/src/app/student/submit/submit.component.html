@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Add New Section</h1>
+<div mat-dialog-content>
+  <form [formGroup]="submitProjectForm">
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Project Link</mat-label>
+      <input
+
+        formControlName="projectLink"
+        matInput
+        placeholder="Project Link"
+      />
+    </mat-form-field>
+
+
+
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button
+    style="margin-left: 8px"
+    mat-raised-button
+    color="primary"
+    (click)="submitProject()"
+  >
+    {{ actionType }}
+  </button>
+</div>

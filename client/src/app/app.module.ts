@@ -44,6 +44,7 @@ import {MatCardModule} from '@angular/material/card';
 import { AddSectionComponent } from './lecturer/add-section/add-section.component';
 import { StudentProjectComponent } from './student/student-project/student-project.component';
 import { StudentNavbarComponent } from './student/student-navbar/student-navbar.component';
+import { SubmitComponent } from './student/submit/submit.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { StudentNavbarComponent } from './student/student-navbar/student-navbar.
     AddSectionComponent,
     StudentProjectComponent,
     StudentNavbarComponent,
+    SubmitComponent,
 
   ],
   imports: [
