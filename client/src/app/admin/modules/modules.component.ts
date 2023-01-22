@@ -135,7 +135,6 @@ export class ModulesComponent implements OnInit {
   // add new module
   addModule() {
     if (!this.editValues) {
-      this.addModuleForm.reset()
       const data = this.addModuleForm.value;
       data['degreeId'] = this.data.degreeId;
       this.adminService.postModule(data).subscribe({

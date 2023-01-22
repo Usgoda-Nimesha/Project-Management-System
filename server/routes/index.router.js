@@ -14,7 +14,7 @@ const moduleCtrl = require("../controllers/module-controller");
 const studentDegree = require("../controllers/student-degree-controller")
 // Lecturer related
 const lecturerDashboard = require("../controllers/lecturer-dashboard-controller");
-
+const getSubmissions = require("../controllers/get-submissions-controller")
 // Student related
 const studentDashboard = require("../controllers/student-dashboard-controller");
 const lecturerSection = require("../controllers/lecturer-section");
@@ -42,7 +42,7 @@ router.get(
 );
 
 router.post("/addSection",lecturerSection.addSection)
-
+router.get("/getSubmissions/:pid",getSubmissions.getSubmissions)
 // admin routing
 router.get("/adminDashboard", jwtVerify.verifyToken, adminDashboard.dashboard);
 // Degree

@@ -45,6 +45,9 @@ import { AddSectionComponent } from './lecturer/add-section/add-section.componen
 import { StudentProjectComponent } from './student/student-project/student-project.component';
 import { StudentNavbarComponent } from './student/student-navbar/student-navbar.component';
 import { SubmitComponent } from './student/submit/submit.component';
+import { LecturerNavbarComponent } from './lecturer/lecturer-navbar/lecturer-navbar.component';
+import { ViewSubmissionsComponent } from './lecturer/view-submissions/view-submissions.component';
+import { ViewProjectsComponent } from './lecturer/view-projects/view-projects.component';
 
 
 @NgModule({
@@ -63,6 +66,9 @@ import { SubmitComponent } from './student/submit/submit.component';
     StudentProjectComponent,
     StudentNavbarComponent,
     SubmitComponent,
+    LecturerNavbarComponent,
+    ViewSubmissionsComponent,
+    ViewProjectsComponent,
 
   ],
   imports: [

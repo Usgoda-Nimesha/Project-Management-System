@@ -17,6 +17,7 @@ import {
 } from '@angular/material/dialog';
 
 import { AddSectionComponent } from '../add-section/add-section.component';
+import { ViewProjectsComponent } from '../view-projects/view-projects.component';
 
 @Component({
   selector: 'app-lecturer-dashboard',
@@ -29,7 +30,7 @@ export class LecturerDashboardComponent implements OnInit {
     'moduleId',
     'duration',
     'edit',
-    'delete',
+    'viewSubmissions',
   ];
 
   userDetails;
@@ -77,5 +78,14 @@ this.getAllModules()
 
     addSection(row:any){
       this.dialog.open(AddSectionComponent,{width:"30",data:row})
+    }
+
+    viewProjects(row:any){
+      this.dialog.open(ViewProjectsComponent,{
+        width:"40%",
+        data:row,
+      }).afterClosed().subscribe((value)=>{
+
+      })
     }
 }

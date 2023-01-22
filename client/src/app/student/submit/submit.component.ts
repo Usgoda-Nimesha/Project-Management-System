@@ -34,7 +34,7 @@ export class SubmitComponent implements OnInit {
     let date = new Date()
 
     var projectDetails = this.submitProjectForm.value
-    projectDetails["pid"] = this.data.id
+    projectDetails["pid"] = this.data._id
     projectDetails["studentId"] = JSON.parse(userPayload)['_id']
     projectDetails["submissionDate"] = date
     console.log(projectDetails)
