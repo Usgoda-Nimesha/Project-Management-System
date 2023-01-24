@@ -37,4 +37,8 @@ export class AdminService {
   editModules(data: any, _id: string) {
     return this.http.put(environment.apiBaseUrl + `/module/${_id}`, data);
   }
+
+  deleteModules(_id:string){
+    return this.http.delete(environment.apiBaseUrl+`/module/${_id}`)
+  }
 }

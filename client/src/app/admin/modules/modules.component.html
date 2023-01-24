@@ -54,7 +54,7 @@
           <ng-container matColumnDef="delete">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Delete</th>
             <td mat-cell *matCellDef="let row">
-              <button mat-icon-button color="warn">
+              <button mat-icon-button color="warn" (click)="deleteModule(row)">
                 <mat-icon>delete</mat-icon>
               </button>
             </td>

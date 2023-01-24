@@ -1,73 +1,64 @@
+
+
 <section class="loc">
   <div class="container">
     <div class="row d-flex justify-content-center align-items-center">
       <div
         class="card text-black align-items-center"
-        style="border-radius: 17px; width: 400px; margin-top: 50px"
+        style="border-radius: 17px; width: 450px; margin-top: 150px;height: 500px;"
       >
         <div class="row">
           <h1>Login</h1>
         </div>
 
-        <form #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)">
+        <form [formGroup]="loginForm">
           <div class="row">
-            <div class="form-outline">
-              <label>Email</label>
-              <input
-                type="text"
-                name="email"
-                #email="ngModel"
-                [(ngModel)]="model.email"
-                class="form-control"
-                placeholder="Ex: ugvnimesha@students.nsbm.ac.lk"
-              />
-              <div class="invalid-feedback">Please choose a username.</div>
-            </div>
+            <mat-label class="label">Enter Email</mat-label>
+              <mat-form-field appearance="outline">
+                <mat-label> Email</mat-label>
+                <input formControlName="email" matInput />
+              </mat-form-field>
           </div>
 
           <div class="row">
-            <div class="form-outline">
-              <label>Password</label>
-              <input
-                type="text"
-                name="password"
-                #password="ngModel"
-                [(ngModel)]="model.password"
-                class="form-control"
-                placeholder="Password"
-              />
-              <div class="invalid-feedback">Please choose a username.</div>
-            </div>
-          </div>
 
+            <mat-label class="label">Enter Password</mat-label>
+              <mat-form-field appearance="outline">
+                <mat-label> Password</mat-label>
+                <input formControlName="password" matInput />
+              </mat-form-field>
+
+          </div>
+        </form>
           <div class="row">
             <div class="col-sm">
-              <button type="submit" class="btn btn-primary submit-btn">
-                SIGN IN
-              </button>
+              <button
+
+    mat-raised-button
+    color="primary"
+    class="submit-btn"
+    (click)="onSubmit()"
+  >
+    Submit
+  </button>
             </div>
           </div>
 
           <div class="row">
             <div class="col-1"></div>
-            <div class="col-6">
-              <label style="font-size: 17px">Not a member?</label>
+            <div class="col-sm">
+              <label style="font-size: 17px;">Not a member?</label>
+
+              <a href="http://www.google.com" mat-menu-item style="font-size: 17px;margin-left: 5px;">Register</a>
             </div>
           </div>
           <div class="row">
             <div class="col-sm">
-              <button
-                type="submit"
-                (click)="openRegisterPage()"
-                style="margin-top: -125px; margin-left: 140px"
-                class="btn btn-link"
-              >
-                Register
-              </button>
+
             </div>
           </div>
-        </form>
-        <div class="row"></div>
+
+
       </div>
     </div>
   </div>

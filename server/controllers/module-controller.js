@@ -50,3 +50,14 @@ module.exports.updateModule = (req, res) => {
     }
   )
 };
+
+// delete modules
+module.exports.deleteModule = (req,res)=>{
+Module.findByIdAndDelete(req.params.mid,(err,doc)=>{
+  if(!err){
+    res.send(doc);
+  }else{
+    console.log("Error deleting module")
+  }
+});
+};

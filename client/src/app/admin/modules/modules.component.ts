@@ -117,6 +117,19 @@ export class ModulesComponent implements OnInit {
     this.addModuleForm.controls['duration'].setValue(row.duration);
   }
 
+  deleteModule(row:any){
+     this.adminService.deleteModules(row._id).subscribe({
+      next:(res)=>{
+        this.getAllModules()
+        alert("Deleted Successfully");
+      },
+    error:()=>{
+      alert("Error deleting module");
+    }
+
+     });
+  }
+
   // update values in database
   updateModule() {
     const data = this.addModuleForm.value;

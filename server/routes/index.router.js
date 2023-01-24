@@ -55,6 +55,7 @@ router.post("/studentDegree",studentDegree.assignDegree)
 router.post("/saveModule", moduleCtrl.saveModule);
 router.get("/module/:id", moduleCtrl.getModules);
 router.put("/module/:m_id", moduleCtrl.updateModule);
+router.delete("/module/:mid",moduleCtrl.deleteModule)
 
 
 module.exports = router;
