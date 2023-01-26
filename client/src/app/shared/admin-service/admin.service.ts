@@ -1,11 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { User } from '../user.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AdminService {
+
+  selectedUser: User = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    role: '',
+    password: '',
+  };
+
   constructor(private http: HttpClient) {}
 
   ////////////////////////////// DEGREE ////////////////////////////////////
@@ -41,4 +51,10 @@ export class AdminService {
   deleteModules(_id:string){
     return this.http.delete(environment.apiBaseUrl+`/module/${_id}`)
   }
+
+  ///////////////////////////////// LECTURER /////////////////////////////////
+
+    registerLectuurer(user: User) {
+      return this.http.post(environment.apiBaseUrl + '/register',user,);
+    }
 }

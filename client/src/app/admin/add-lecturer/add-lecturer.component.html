@@ -1,0 +1,40 @@
+
+<app-admin-navbar></app-admin-navbar>
+<div class="register-container">
+  <h1 class="heading">Register Lecturer</h1>
+  <form class="example-form" [formGroup]="addLecturerForm">
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td>
+        <mat-form-field class="example-full-width" >
+          <mat-label>First Name</mat-label>
+          <input formControlName="firstName" matInput />
+        </mat-form-field>
+      </td>
+
+      <td>
+        <mat-form-field class="example-full-width" >
+          <mat-label>Last Name</mat-label>
+          <input formControlName="lastName" matInput />
+        </mat-form-field>
+    </td>
+    </tr>
+  </table>
+
+    <p>
+      <mat-form-field class="example-full-width" >
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" >
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput />
+      </mat-form-field>
+    </p>
+
+
+  </form>
+  <div style="text-align:center" >
+    <button mat-raised-button color="primary" class="btn" mat-dialog-close>Register</button>
+  </div>
+</div>

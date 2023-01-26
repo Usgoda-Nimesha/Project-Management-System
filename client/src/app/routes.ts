@@ -5,6 +5,7 @@ import { StudentDashboardComponent } from './student/student-dashboard/student-d
 import { AuthGuard } from './authGuard/auth.guard';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { LecturerDashboardComponent } from './lecturer/lecturer-dashboard/lecturer-dashboard.component';
+import { AddLecturerComponent } from './admin/add-lecturer/add-lecturer.component';
 
 export const appRoutes: Routes = [
   {
@@ -31,8 +32,13 @@ export const appRoutes: Routes = [
     component: StudentRegisterComponent,
   },
   {
+    path: 'addLecturer',
+    component: AddLecturerComponent,
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full',
   },
+
 ];
