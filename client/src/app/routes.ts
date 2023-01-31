@@ -6,6 +6,8 @@ import { AuthGuard } from './authGuard/auth.guard';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { LecturerDashboardComponent } from './lecturer/lecturer-dashboard/lecturer-dashboard.component';
 import { AddLecturerComponent } from './admin/add-lecturer/add-lecturer.component';
+import { ChatComponent } from './student/chat/chat.component';
+import { LecturerChatComponent } from './lecturer/lecturer-chat/lecturer-chat.component';
 
 export const appRoutes: Routes = [
   {
@@ -22,6 +24,14 @@ export const appRoutes: Routes = [
     component: StudentDashboardComponent,
     canActivate: [AuthGuard],
   },
+  {
+     path:"studentChat",
+     component:ChatComponent
+  },
+  {
+    path:"lecturerChat",
+    component:LecturerChatComponent
+ },
   {
     path: 'adminDashboard',
     component: AdminDashboardComponent,

@@ -1,20 +1,21 @@
-main {
-
-}
 .top-nav-bar {
   text-align: right;
 }
+
 i {
   padding-top: 15px;
   font-weight: bold;
 }
+
 .user-name {
   padding-right: 10px;
   font-size: 20px;
 }
+
 .example-spacer {
   flex: 1 1 auto;
 }
+
 table {
   width: 100%;
 }

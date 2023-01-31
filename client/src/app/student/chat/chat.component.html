@@ -1,0 +1,22 @@
+<div class="chat-box">
+  <div *ngFor="let message of messageList">
+    {{ message }}
+    <br />
+  </div>
+</div>
+<div class="send-msg">
+  <form [formGroup]="chatForm">
+    <mat-form-field class="text-area">
+      <mat-label>Enter message</mat-label>
+      <textarea matInput formControlName="chatMsg"></textarea>
+    </mat-form-field>
+  </form>
+  <button
+    style="margin-left: 350px"
+    mat-raised-button
+    color="primary"
+    (click)="sendMessage()"
+  >
+    Send Message
+  </button>
+</div>

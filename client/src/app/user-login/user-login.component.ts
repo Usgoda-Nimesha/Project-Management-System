@@ -18,9 +18,8 @@ export class UserLoginComponent implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder,) {}
 
-
   errorMsg: string | undefined;
-  submitted = false;
+  submitStatus = false;
 
   ngOnInit(): void {
 
@@ -36,7 +35,8 @@ export class UserLoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
+    this.submitStatus = true;
+   if(this.loginForm.valid){
     this.userService.login(this.loginForm.value).subscribe(
       (res) => {
         this.userService.setToken(res['token']);
@@ -64,5 +64,6 @@ export class UserLoginComponent implements OnInit {
         alert(this.errorMsg);
       }
     );
+   }
   }
 }

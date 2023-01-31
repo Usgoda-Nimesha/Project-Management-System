@@ -3,6 +3,8 @@ require("./config/config");
 require("./models/db-con");
 require("./config/passportConfig");
 
+require("./web-socket");
+
 // required packages
 const express = require("express");
 const bodyParser = require("body-parser");

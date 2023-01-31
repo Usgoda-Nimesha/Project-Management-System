@@ -1,4 +1,4 @@
-.register-container{
+.register-container {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -10,7 +10,7 @@
   padding: 60px;
 }
 
-.heading{
+.heading {
   text-align: center;
   font-weight: bold;
   font-size: 35px;
@@ -24,7 +24,7 @@
   width: 100%;
 }
 
-.btn{
+.btn {
   width: 200px;
   height: 40px;
 }

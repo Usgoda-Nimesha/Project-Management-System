@@ -1,9 +1,9 @@
-export const validUser = {
-  username: 'viha',
+export const validLoginData = {
+  email: 'user@gmail.com',
   password: '123'
 };
 
-export const blankUser = {
-  username: '',
+export const emptyLoginData = {
+  email: '',
   password: ''
 };

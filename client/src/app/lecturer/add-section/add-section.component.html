@@ -1,12 +1,9 @@
-<h1 mat-dialog-title>Add New Section</h1>
+<h1 mat-dialog-title>Add New Project</h1>
 <div mat-dialog-content>
   <form [formGroup]="addSectionForm">
-
-
     <mat-form-field appearance="outline">
-      <mat-label> Section Name</mat-label>
+      <mat-label> Project Name</mat-label>
       <input
-
         formControlName="sectionName"
         matInput
         placeholder="Section Name"
@@ -14,27 +11,24 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label> Section Description</mat-label>
+      <mat-label> Project Description</mat-label>
       <input
-
         formControlName="sectionDescription"
         matInput
         placeholder="Section Description"
       />
     </mat-form-field>
 
-
-
-
-
-<div mat-dialog-action [align]="'end'">
-  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-  <button
-    style="margin-left: 8px"
-    mat-raised-button
-    color="primary"
-    (click)="addSection()"
-  >
-    {{ actionType }}
-  </button>
+    <div mat-dialog-action [align]="'end'">
+      <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+      <button
+        style="margin-left: 8px"
+        mat-raised-button
+        color="primary"
+        (click)="addSection()"
+      >
+        {{ actionType }}
+      </button>
+    </div>
+  </form>
 </div>

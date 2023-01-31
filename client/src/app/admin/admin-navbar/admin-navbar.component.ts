@@ -15,6 +15,5 @@ export class AdminNavbarComponent implements OnInit {
 
   openAddLecturer(){
     this.router.navigate(['/addLecturer']);
-    console.log("Hello")
   }
 }

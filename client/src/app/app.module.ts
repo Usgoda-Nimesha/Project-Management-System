@@ -49,6 +49,8 @@ import { LecturerNavbarComponent } from './lecturer/lecturer-navbar/lecturer-nav
 import { ViewSubmissionsComponent } from './lecturer/view-submissions/view-submissions.component';
 import { ViewProjectsComponent } from './lecturer/view-projects/view-projects.component';
 import { AddLecturerComponent } from './admin/add-lecturer/add-lecturer.component';
+import { ChatComponent } from './student/chat/chat.component';
+import { LecturerChatComponent } from './lecturer/lecturer-chat/lecturer-chat.component';
 
 
 @NgModule({
@@ -71,12 +73,15 @@ import { AddLecturerComponent } from './admin/add-lecturer/add-lecturer.componen
     ViewSubmissionsComponent,
     ViewProjectsComponent,
     AddLecturerComponent,
+    ChatComponent,
+    LecturerChatComponent,
 
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BrowserAnimationsModule,
@@ -91,7 +96,6 @@ import { AddLecturerComponent } from './admin/add-lecturer/add-lecturer.componen
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
-    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     MatTableModule,
