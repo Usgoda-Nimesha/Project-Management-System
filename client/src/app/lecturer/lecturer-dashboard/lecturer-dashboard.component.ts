@@ -6,9 +6,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
-import { UserService } from 'src/app/shared/user.service';
-import { AdminService } from 'src/app/shared/admin-service/admin.service';
-import { LecturerService } from 'src/app/shared/lecturer-service/lecturer.service';
+import { UserService } from 'src/app/services/user.service';
+import { AdminService } from 'src/app/services/admin-service/admin.service';
+import { LecturerService } from 'src/app/services/lecturer-service/lecturer.service';
 // angular material
 import {
   MatDialogRef,

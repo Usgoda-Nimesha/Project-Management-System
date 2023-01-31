@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AdminService } from 'src/app/shared/admin-service/admin.service';
+import { AdminService } from 'src/app/services/admin-service/admin.service';
 
 @Component({
   selector: 'app-add-lecturer',

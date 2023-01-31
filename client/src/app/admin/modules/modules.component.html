@@ -11,7 +11,7 @@
         <input
           matInput
           (keyup)="applyFilter($event)"
-          placeholder="Ex. Mia"
+          placeholder="Ex. Web Development"
           #input
         />
       </mat-form-field>
@@ -22,6 +22,7 @@
           [dataSource]="dataSource"
           matSort
           [ngStyle]="{ width: tableWidth }"
+          style="height: 400px"
         >
           <!-- Module Name Column -->
           <ng-container matColumnDef="moduleName">

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/shared/user.service';
+import { UserService } from 'src/app/services/user.service';
 
 import { ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -9,7 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 
 // components
 import { AddDegreeComponent } from '../add-degree/add-degree.component';
-import { AdminService } from 'src/app/shared/admin-service/admin.service';
+import { AdminService } from 'src/app/services/admin-service/admin.service';
 import { ModulesComponent } from '../modules/modules.component';
 // angular material
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';

@@ -4,7 +4,7 @@ import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/materia
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { UserLoginComponent } from './user-login.component';
-import {validLoginData,emptyLoginData} from "src/mocks/login"
+import {validLoginData,emptyLoginData} from "src/testData/login"
 
 describe('UserLoginComponent', () => {
   let component: UserLoginComponent;

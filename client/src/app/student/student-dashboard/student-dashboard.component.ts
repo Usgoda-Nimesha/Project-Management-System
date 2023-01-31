@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/shared/user.service';
+import { UserService } from 'src/app/services/user.service';
 
-import { StudentService } from 'src/app/shared/student/student.service';
+import { StudentService } from 'src/app/services/student-service/student.service';
 
 // angular material
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';

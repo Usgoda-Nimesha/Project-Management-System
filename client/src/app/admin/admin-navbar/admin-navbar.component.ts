@@ -16,4 +16,10 @@ export class AdminNavbarComponent implements OnInit {
   openAddLecturer(){
     this.router.navigate(['/addLecturer']);
   }
+  signOut(){
+    this.router.navigate(['/login']);
+  }
+  dashboard(){
+    this.router.navigate(['/adminDashboard']);
+  }
 }

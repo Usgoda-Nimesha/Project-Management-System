@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChatService } from 'src/app/shared/chat/chat.service';
+import { ChatService } from 'src/app/services/chat-service/chat.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 

@@ -12,7 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 // components
 import { StudentRegisterComponent } from './student/student-register/student-register.component';
 import { appRoutes } from './routes';
-import { UserService } from './shared/user.service';
+import { UserService } from './services/user.service';
 import { AuthGuard } from './authGuard/auth.guard';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { AuthInterceptor } from './authGuard/auth.interceptor';

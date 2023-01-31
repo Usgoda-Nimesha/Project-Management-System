@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UserService } from 'src/app/shared/user.service';
+import { UserService } from 'src/app/services/user.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { StudentService } from 'src/app/shared/student/student.service';
+import { StudentService } from 'src/app/services/student-service/student.service';
 
 @Component({
   selector: 'app-student-register',

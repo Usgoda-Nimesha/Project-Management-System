@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { InjectSetupWrapper } from '@angular/core/testing';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { LecturerService } from 'src/app/shared/lecturer-service/lecturer.service';
+import { LecturerService } from 'src/app/services/lecturer-service/lecturer.service';
 
 @Component({
   selector: 'app-add-section',

@@ -16,5 +16,10 @@ export class StudentNavbarComponent implements OnInit {
   openChat(){
     this.router.navigate(['/studentChat']);
   }
-
+  signOut(){
+    this.router.navigate(['/login']);
+  }
+  dashboard(){
+    this.router.navigate(['/studentDashboard']);
+  }
 }

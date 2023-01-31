@@ -4,13 +4,17 @@
     class="example-icon"
     aria-label="Example icon-button with menu icon"
   >
-    <mat-icon>supervised_user_circle</mat-icon>
+    <mat-icon>dashboard</mat-icon>
   </button>
-  <span>Student Dashboard</span>
+  <span>Student</span>
   <span class="example-spacer"></span>
-  <button class="spacing" mat-raised-button color="warn">Dashboard</button>
+  <button class="spacing" mat-raised-button color="warn" (click)="dashboard()">
+    Dashboard
+  </button>
   <button class="spacing" mat-raised-button color="warn" (click)="openChat()">
     Inquiries
   </button>
-  <button class="spacing" mat-raised-button color="warn">Sign Out</button>
+  <button class="spacing" mat-raised-button color="warn" (click)="signOut()">
+    Sign Out
+  </button>
 </mat-toolbar>

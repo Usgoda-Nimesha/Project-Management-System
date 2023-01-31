@@ -15,4 +15,10 @@ export class LecturerNavbarComponent implements OnInit {
   openChat(){
     this.router.navigate(['/lecturerChat']);
   }
+  signOut(){
+    this.router.navigate(['/login']);
+  }
+  dashboard(){
+    this.router.navigate(['/lecturerDashboard']);
+  }
 }

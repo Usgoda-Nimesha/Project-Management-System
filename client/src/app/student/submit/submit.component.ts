@@ -2,8 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { InjectSetupWrapper } from '@angular/core/testing';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { LecturerService } from 'src/app/shared/lecturer-service/lecturer.service';
-import { StudentService } from 'src/app/shared/student/student.service';
+import { LecturerService } from 'src/app/services/lecturer-service/lecturer.service';
+import { StudentService } from 'src/app/services/student-service/student.service';
 
 @Component({
   selector: 'app-submit',

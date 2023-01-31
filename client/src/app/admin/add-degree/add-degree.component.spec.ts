@@ -39,7 +39,30 @@ describe('AddDegreeComponent', () => {
     fixture.detectChanges();
   });
 
+   // function to update form values
+   function update(degreeName,degreeId,degreeType,pace,duration){
+    component.addDegreeForm.controls["degreeName"].setValue(degreeName),
+    component.addDegreeForm.controls["degreeId"].setValue(degreeId),
+    component.addDegreeForm.controls["degreeType"].setValue(degreeType),
+    component.addDegreeForm.controls["pace"].setValue(pace),
+    component.addDegreeForm.controls["duration"].setValue(duration)
+  }
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // empty input data
+  it('Form should be invalid when input data is not provided', (() => {
+
+
+    expect(component.addDegreeForm.invalid).toBeTruthy();
+  }));
+
+  // when all input data is present
+  it("Form should be valid when all input data is provided",(()=>{
+
+
+    expect(component.addDegreeForm.valid).toBeTruthy();
+  }));
 });

@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 // service class
-import { AdminService } from 'src/app/shared/admin-service/admin.service';
+import { AdminService } from 'src/app/services/admin-service/admin.service';
 
 @Component({
   selector: 'app-add-degree',

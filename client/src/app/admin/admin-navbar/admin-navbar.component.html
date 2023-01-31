@@ -4,18 +4,22 @@
     class="example-icon"
     aria-label="Example icon-button with menu icon"
   >
-    <mat-icon>supervised_user_circle</mat-icon>
+    <mat-icon>dashboard</mat-icon>
   </button>
-  <span>Admin Dashboard</span>
+  <span>Admin</span>
   <span class="example-spacer"></span>
-  <button class="spacing" mat-raised-button color="warn" (click)="openAddLecturer()">
-    Lecturer
+  <button class="spacing" mat-raised-button color="warn" (click)="dashboard()">
+    Dashboard
   </button>
-  <button class="spacing" mat-raised-button color="warn" >
-    Student
+  <button
+    class="spacing"
+    mat-raised-button
+    color="warn"
+    (click)="openAddLecturer()"
+  >
+    Lecturer Registration
   </button>
-  <button class="spacing" mat-raised-button color="warn">
-    Degree
+  <button class="spacing" mat-raised-button color="warn" (click)="signOut()">
+    Sign Out
   </button>
-
 </mat-toolbar>

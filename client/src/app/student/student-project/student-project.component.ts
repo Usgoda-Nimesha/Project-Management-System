@@ -7,7 +7,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
-import { StudentService } from 'src/app/shared/student/student.service';
+import { StudentService } from 'src/app/services/student-service/student.service';
 
 // angular material
 import {

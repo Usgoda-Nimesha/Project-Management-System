@@ -8,7 +8,7 @@ import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { StudentRegisterComponent } from './student-register.component';
-import { validRegisterData,emptyRegisterData } from 'src/mocks/register';
+import { validRegisterData,emptyRegisterData } from 'src/testData/register';
 
 describe('StudentRegisterComponent', () => {
   let component: StudentRegisterComponent;
@@ -63,6 +63,14 @@ describe('StudentRegisterComponent', () => {
     expect(component.registerStudentForm.invalid).toBeTruthy();
   }));
 
-
+  // when all input data is present
+  it("Form should be valid when all input data is provided",(()=>{
+    update(validRegisterData.firstName,
+          validRegisterData.lastName,
+          validRegisterData.degreeId,
+          validRegisterData.email,
+          validRegisterData.password)
+    expect(component.registerStudentForm.valid).toBeTruthy();
+  }));
 
 });
