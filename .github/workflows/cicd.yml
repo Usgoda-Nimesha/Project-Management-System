@@ -1,20 +1,17 @@
-name: Mean Stack Application Workflow
+name: Super-Linter
 
-on:
-  push:
-    branches: [main]
+on: push
 
 jobs:
-  build:
-  runs-on:ubuntu-latest
-  steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-    - name: npm install
-      run: |
-        npm install
-      env:
-        CI: true
+  super-lint:
+    name: Lint code base
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
+      - name: Run Super-Linter
+        uses: github/super-linter@v4
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
