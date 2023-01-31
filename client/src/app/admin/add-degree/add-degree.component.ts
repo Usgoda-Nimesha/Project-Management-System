@@ -11,6 +11,7 @@ import { AdminService } from 'src/app/shared/admin-service/admin.service';
   templateUrl: './add-degree.component.html',
   styleUrls: ['./add-degree.component.css'],
 })
+
 export class AddDegreeComponent implements OnInit {
   addDegreeForm!: FormGroup;
   actionType = 'Save';
