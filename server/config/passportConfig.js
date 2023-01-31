@@ -13,11 +13,11 @@ passport.use(
       }
       // if there is no error, check for null
       else if (!user) {
-        return done(null, false, { message: "Student is not registered" });
+        return done(null, false, { message: "User is not registered" });
       }
       // if password is wrong
       else if (!user.verifyPassword(password)) {
-        return done(null, false, { message: "Password is incorrect" });
+        return done(null, false, { message: "Email or Password is incorrect" });
       }
 
       // if both email and password is valid

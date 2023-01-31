@@ -17,13 +17,10 @@ export class UserLoginComponent implements OnInit {
   constructor(private userService: UserService,
     private router: Router,
     private formBuilder: FormBuilder,) {}
-  model = {
-    email: '',
-    password: '',
-    role: '',
-  };
+
 
   errorMsg: string | undefined;
+  submitted = false;
 
   ngOnInit(): void {
 
@@ -39,12 +36,14 @@ export class UserLoginComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submitted = true;
     this.userService.login(this.loginForm.value).subscribe(
       (res) => {
         this.userService.setToken(res['token']);
 
         // decode JWT token and find the role of the user
         const userType = this.userService.findUserType(res['token']);
+        console.log(userType);
         // if user is a student redirect to student page
         if (userType == 'student') {
           this.router.navigateByUrl('/studentDashboard');

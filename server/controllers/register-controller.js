@@ -4,6 +4,7 @@ const User = mongoose.model("User");
 
 // function to handle a request from client side
 module.exports.userRegister = (req, res, next) => {
+  console.log(req.body)
   var user = new User();
   (user.firstName = req.body.firstName),
     (user.lastName = req.body.lastName),

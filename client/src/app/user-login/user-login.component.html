@@ -1,10 +1,9 @@
-
 <section class="loc">
   <div class="container">
     <div class="row d-flex justify-content-center align-items-center">
       <div
         class="card text-black align-items-center"
-        style="border-radius: 17px; width: 450px;"
+        style="border-radius: 17px; width: 450px"
       >
         <div class="row">
           <h1>Login</h1>
@@ -13,51 +12,48 @@
         <form [formGroup]="loginForm">
           <div class="row">
             <mat-label class="label">Enter Email</mat-label>
-              <mat-form-field appearance="outline">
-                <mat-label> Email</mat-label>
-                <input formControlName="email" matInput />
-              </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label> Email</mat-label>
+              <input formControlName="email" matInput />
+            </mat-form-field>
           </div>
 
           <div class="row">
-
             <mat-label class="label">Enter Password</mat-label>
-              <mat-form-field appearance="outline">
-                <mat-label> Password</mat-label>
-                <input formControlName="password" matInput type="password" />
-              </mat-form-field>
-
+            <mat-form-field appearance="outline">
+              <mat-label> Password</mat-label>
+              <input formControlName="password" matInput type="password" />
+            </mat-form-field>
           </div>
         </form>
-          <div class="row">
-            <div class="col-sm">
-              <button
-
-    mat-raised-button
-    color="primary"
-    class="submit-btn"
-    (click)="onSubmit()"
-  >
-    Submit
-  </button>
-            </div>
+        <div class="row">
+          <div class="col-sm">
+            <button
+              mat-raised-button
+              color="primary"
+              class="submit-btn"
+              (click)="onSubmit()"
+            >
+              Submit
+            </button>
           </div>
+        </div>
 
-          <div class="row">
-            <div class="col-1"></div>
-            <div class="col-sm">
-              <label style="font-size: 17px;">Not a member?</label>
-
-              <a href="http://www.google.com" mat-menu-item style="font-size: 17px;margin-left: 5px;">Register</a>
-            </div>
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-sm">
+            <label style="font-size: 17px">Not a member?</label>
+            <a
+              href="register"
+              mat-menu-item
+              style="font-size: 17px; margin-left: 5px"
+              >Register</a
+            >
           </div>
-          <div class="row">
-            <div class="col-sm">
-
-            </div>
-          </div>
-
-
+        </div>
+        <div class="row">
+          <div class="col-sm"></div>
+        </div>
       </div>
     </div>
   </div>

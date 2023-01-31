@@ -3,6 +3,7 @@ import { InjectSetupWrapper } from '@angular/core/testing';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { LecturerService } from 'src/app/shared/lecturer-service/lecturer.service';
+
 @Component({
   selector: 'app-add-section',
   templateUrl: './add-section.component.html',

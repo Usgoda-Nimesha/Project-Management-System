@@ -1,19 +1,38 @@
-h1 {
-  font-size: 35px;
+.register-container{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  top: 50%;
+  border: 1px solid;
+  height: 520px;
+  border-radius: 17px;
+  width: 500px;
+  padding: 60px;
+}
+
+.heading{
+  text-align: center;
   font-weight: bold;
-}
-.row {
-  margin-top: 30px;
-}
-
-button {
-  width: 150px;
-  height: 50px;
-  font-size: 20px;
+  font-size: 35px;
+  padding-bottom: 20px;
 }
 
-label {
-  font-size: 20px;
-  margin-bottom: 10px;
-  margin-left: 1px;
+.example-form {
+  font-size: 17px;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.btn{
+  width: 200px;
+  height: 40px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
 }

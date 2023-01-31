@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserLoginComponent } from './user-login.component';
+import {blankUser} from 'src/mocks/login'
 
 describe('UserLoginComponent', () => {
   let component: UserLoginComponent;
@@ -17,7 +18,15 @@ describe('UserLoginComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('component initial state', () => {
+    expect(component.submitted).toBeFalsy();
+
+
   });
+
+
+
+
+
+
 });

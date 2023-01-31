@@ -1,34 +1,84 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/shared/user.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { StudentService } from 'src/app/shared/student/student.service';
 
 @Component({
   selector: 'app-student-register',
   templateUrl: './student-register.component.html',
   styleUrls: ['./student-register.component.css'],
 })
+
+
+
 export class StudentRegisterComponent implements OnInit {
+
+  degreeList;
+
   showSucessMessage: boolean | undefined;
   serverErrorMessages: string | undefined;
-  constructor(public userService: UserService) {}
+  constructor(public userService: UserService,
+              private formBuilder:FormBuilder,
+              private studentService: StudentService) {}
 
-  ngOnInit(): void {}
+  registerStudentForm!:FormGroup
 
-  onSubmit(form: NgForm) {
-    const userData = form.value;
-    userData['role'] = 'student';
-    this.userService.postUser(userData).subscribe(
-      (res) => {
-        this.showSucessMessage = true;
-        setTimeout(() => (this.showSucessMessage = false), 400);
+
+  ngOnInit(): void {
+    this.registerStudentForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      degreeId:['', Validators.required],
+
+    });
+
+    this.studentService.getDegree().subscribe({
+      next:(res)=>{
+       this.degreeList = res;
+
       },
-      (err) => {
-        if (err.status === 422) {
-          this.serverErrorMessages = err.error.join('<br/>');
-        } else {
-          this.serverErrorMessages = 'Something went wrong';
-        }
+      error:()=>{
+        console.log("Error getting degree list");
       }
-    );
+    })
+  }
+
+  registerStudent() {
+    const userData = this.registerStudentForm.value;
+    userData['role'] = 'student';
+
+    const degreeId = userData["degreeId"];
+    delete userData["degreeId"];
+
+    this.userService.postUser(userData).subscribe({
+      next:(res)=>{
+        var studentDegreeData = this.registerStudentForm.value;
+        delete studentDegreeData["firstName"]
+        delete studentDegreeData["lastName"]
+        delete studentDegreeData["email"]
+        delete studentDegreeData["password"]
+        delete studentDegreeData["role"]
+
+        studentDegreeData["_id"] = res["_id"];
+        studentDegreeData["degreeId"] = degreeId;
+
+        console.log(studentDegreeData)
+        this.studentService.assignDegree(studentDegreeData).subscribe({
+          next:(res)=>{
+            alert("Registration Successfull");
+          },
+          error:()=>{
+            alert("Error registering")
+          }
+        })
+
+      },
+      error:()=>{
+        alert("Error registering");
+      }
+    });
   }
 }
