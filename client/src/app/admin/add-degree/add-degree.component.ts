@@ -15,6 +15,7 @@ import { AdminService } from 'src/app/services/admin-service/admin.service';
 export class AddDegreeComponent implements OnInit {
   addDegreeForm!: FormGroup;
   actionType = 'Save';
+  title = "Add New Degree"
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,6 +34,7 @@ export class AddDegreeComponent implements OnInit {
     });
 
     if (this.editData) {
+      this.title = "Update Degree"
       this.actionType = 'Update';
       this.addDegreeForm.controls['degreeName'].setValue(
         this.editData.degreeName
@@ -63,6 +65,7 @@ export class AddDegreeComponent implements OnInit {
         });
       }
     } else {
+
       this.updateDegree();
     }
   }
@@ -77,6 +80,7 @@ export class AddDegreeComponent implements OnInit {
           // reset
           this.addDegreeForm.reset();
           this.dialogRef.close('update');
+          this.title = "Add New Degree"
         },
       });
   }
