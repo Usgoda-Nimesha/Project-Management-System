@@ -34,58 +34,61 @@ export class LecturerDashboardComponent implements OnInit {
   ];
 
   userDetails;
-  tableWidth = "600px"
+  tableWidth = '600px';
 
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private userService: UserService,
+  constructor(
+    private userService: UserService,
     private router: Router,
     private formBuilder: FormBuilder,
     private dialog: MatDialog,
     private adminService: AdminService,
-    private lecturerService:LecturerService) {}
+    private lecturerService: LecturerService
+  ) {}
 
   ngOnInit(): void {
-this.getAllModules()
+    this.getAllModules();
   }
-    // search bar to find specific rows easily
-    applyFilter(event: Event) {
-      const filterValue = (event.target as HTMLInputElement).value;
-      this.dataSource.filter = filterValue.trim().toLowerCase();
+  // search bar to find specific rows easily
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
 
-      if (this.dataSource.paginator) {
-        this.dataSource.paginator.firstPage();
-      }
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
     }
+  }
 
-    getAllModules(){
-      this.lecturerService.getModules().subscribe({
-        next:(res)=>{
-          console.log(res)
-          // bind data
+  getAllModules() {
+    this.lecturerService.getModules().subscribe({
+      next: (res) => {
+        console.log(res);
+        // bind data
         this.dataSource = new MatTableDataSource(res);
 
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
-        },
-        error: () => {
-          alert('Error getting module data');
-        },
+      },
+      error: () => {
+        alert('Error getting module data');
+      },
+    });
+  }
+
+  addSection(row: any) {
+    this.dialog.open(AddSectionComponent, { width: '30', data: row });
+  }
+
+  viewProjects(row: any) {
+    this.dialog
+      .open(ViewProjectsComponent, {
+        width: '55%',
+        data: row,
       })
-    }
-
-    addSection(row:any){
-      this.dialog.open(AddSectionComponent,{width:"30",data:row})
-    }
-
-    viewProjects(row:any){
-      this.dialog.open(ViewProjectsComponent,{
-        width:"40%",
-        data:row,
-      }).afterClosed().subscribe((value)=>{
-
-      })
-    }
+      .afterClosed()
+      .subscribe((value) => {});
+  }
 }

@@ -1,24 +1,23 @@
-.chat-box{
+.chat-box {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -70%);
-  top: 50%;
+  top: 60%;
   border: 1px solid;
-  height: 520px;
+  height: 450px;
   border-radius: 17px;
   width: 500px;
   padding: 60px;
 }
 
-.send-msg{
+.send-msg {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  top: 65%;
+  top: 75%;
   width: 500px;
   padding-top: 40px;
-
 }
-.text-area{
+.text-area {
   width: 480px;
 }
